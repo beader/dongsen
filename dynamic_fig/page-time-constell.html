@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<head>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/highcharts.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width: 310px; height: 500px; max-width: 800px; margin: 0 auto"></div>
+	<script type="text/javascript">
+	var defaultPadding = 0.2;
+	$(function () {
+		var xAxisExtremes;
+		var yAxisExtremes;
+	    $('#container').highcharts({
+	        chart: {
+	            type: 'scatter',
+	            zoomType: 'xy'
+	        },
+	        credits: {
+            	enabled: false
+        	},
+	        title: {
+	            text: '每次上站平均瀏覽頁面數與停留時間'
+	        },
+	        yAxis: {
+	        	title: {
+	        		text: '平均瀏覽時間(小時)',
+	        		style: {
+	        			fontSize: 14
+					}
+	        	},
+	        	labels: {
+	        		format: '{value:.2f}h'
+	        	},
+	        	minPadding: defaultPadding,
+    			maxPadding: defaultPadding
+	        },
+	        xAxis: {
+	        	title: {
+	        		text: '平均瀏覽頁面數',
+	        		style: {
+	        			fontSize: 14
+	        		}
+	        	},
+	        	minPadding: defaultPadding,
+    			maxPadding: defaultPadding
+	        },
+	        plotOptions: {
+	            series: {
+	                dataLabels: {
+	                    enabled: true,
+	                    align: 'right',
+	                    borderRadius: 5,
+	                    backgroundColor: 'rgba(252, 255, 197, 0.7)',
+	                    borderWidth: 1,
+	                    borderColor: '#AAA',
+	                    x: -5,
+	                    y: -6,
+	                    format: '{point.name}'
+	                }
+	            }
+	        },
+	        series: [{
+	            type: 'scatter',
+	            name: '星座',
+	            marker: {symbol: 'circle', fillColor: '#FA7A7A', states: {hover: {enabled: false}}},
+	            data: [
+					{name: "天秤座", x: 13.428, y: 0.220, marker: {radius: 15}},
+					{name: "天蠍座", x: 13.160, y: 0.221, marker: {radius: 14}},
+					{name: "射手座", x: 13.368, y: 0.222, marker: {radius: 14}},
+					{name: "巨蟹座", x: 13.220, y: 0.229, marker: {radius: 8}},
+					{name: "摩羯座", x: 13.928, y: 0.235, marker: {radius: 13}},
+					{name: "水瓶座", x: 13.269, y: 0.223, marker: {radius: 7}},
+					{name: "獅子座", x: 13.375, y: 0.224, marker: {radius: 12}},
+					{name: "白羊座", x: 13.019, y: 0.214, marker: {radius: 5}},
+					{name: "處女座", x: 13.191, y: 0.232, marker: {radius: 12}},
+					{name: "金牛座", x: 13.148, y: 0.217, marker: {radius: 8}},
+					{name: "雙子座", x: 13.643, y: 0.222, marker: {radius: 11}},
+					{name: "雙魚座", x: 13.222, y: 0.223, marker: {radius: 7}}
+	            ]}],
+	        tooltip: {
+	            formatter: function() {
+	                return '<b>' + (this.point ? this.point.name : this.series.name) + '</b><br/>';
+	            }
+	        }
+		});
+	});
+	</script>
+</body>

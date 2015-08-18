@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<head>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/highcharts.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width: 310px; height: 500px; max-width: 800px; margin: 0 auto"></div>
+	<script type="text/javascript">
+	var needChangePadding = true;
+	var defaultPadding = 0.2;
+	$(function () {
+		var xAxisExtremes;
+		var yAxisExtremes;
+	    $('#container').highcharts({
+	        chart: {
+	            type: 'scatter',
+	            zoomType: 'xy'
+	        },
+	        credits: {
+            	enabled: false
+        	},
+	        title: {
+	            text: '平均頁面數與上站時間'
+	        },
+	        yAxis: {
+	        	title: {
+	        		text: '平均瀏覽時間(小時)',
+	        		style: {
+	        			fontSize: 14
+					}
+	        	},
+	        	labels: {
+	        		format: '{value:.2f}h'
+	        	},
+	        	minPadding: defaultPadding,
+    			maxPadding: defaultPadding
+	        },
+	        xAxis: {
+	        	title: {
+	        		text: '平均瀏覽頁面數',
+	        		style: {
+	        			fontSize: 14
+	        		}
+	        	},
+	        	minPadding: defaultPadding,
+    			maxPadding: defaultPadding
+	        },
+	        plotOptions: {
+	            series: {
+	                dataLabels: {
+	                    enabled: true,
+	                    align: 'right',
+	                    borderRadius: 5,
+	                    backgroundColor: 'rgba(252, 255, 197, 0.7)',
+	                    borderWidth: 1,
+	                    borderColor: '#AAA',
+	                    x: -5,
+	                    y: -6,
+	                    format: '{point.name}'
+	                }
+	            },
+	            scatter: {
+	            	events: {
+	            		legendItemClick: function(){
+	            			if (!this.visible)
+                        		return false;
+
+                        	var seriesIndex = this.index;
+		                    var series = this.chart.series;
+
+                        	if (this.name == '性別' && needChangePadding) {
+                        		this.chart.xAxis[0].update({
+                        			minPadding: 1,
+	        						maxPadding: 1
+                        		});
+                        		this.chart.yAxis[0].update({
+                        			minPadding: 1,
+	        						maxPadding: 1
+                        		});
+                        		needChangePadding = false;
+                        	} else {
+								this.chart.xAxis[0].update({
+                        			minPadding: defaultPadding,
+	        						maxPadding: defaultPadding
+                        		});
+                        		this.chart.yAxis[0].update({
+                        			minPadding: defaultPadding,
+	        						maxPadding: defaultPadding
+                        		});
+                        		needChangePadding = true;		                        		
+                        	}
+		                    
+
+		                    for (var i = 0; i < series.length; i++)
+		                    {
+		                        if (series[i].index != seriesIndex)
+		                        {
+
+		                            series[i].visible ?
+		                            series[i].hide() :
+		                            series[i].show();
+		                        } 
+		                    }
+
+		                    return false;
+	            		}
+	            	}
+	            }
+	        },
+	        series: [{
+	            type: 'scatter',
+	            name: '性別',
+	            data: [
+	                {name:"女生", x: 13.58, y: 0.23, marker: {radius: 10}},
+					{name:"男生", x: 12.66, y: 0.22, marker: {radius: 15}}
+	            ]}],
+	        tooltip: {
+	            formatter: function() {
+	                return '<b>' + (this.point ? this.point.name : this.series.name) + '</b><br/>';
+	            }
+	        }
+		});
+	});
+	</script>
+</body>

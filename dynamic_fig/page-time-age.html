@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<head>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/highcharts.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width: 310px; height: 500px; max-width: 800px; margin: 0 auto"></div>
+	<script type="text/javascript">
+	var defaultPadding = 0.2;
+	$(function () {
+		var xAxisExtremes;
+		var yAxisExtremes;
+	    $('#container').highcharts({
+	        chart: {
+	            type: 'scatter',
+	            zoomType: 'xy'
+	        },
+	        credits: {
+            	enabled: false
+        	},
+	        title: {
+	            text: '平均頁面數與上站時間'
+	        },
+	        yAxis: {
+	        	title: {
+	        		text: '平均瀏覽時間(小時)',
+	        		style: {
+	        			fontSize: 16
+					}
+	        	},
+	        	labels: {
+	        		format: '{value:.2f}h'
+	        	},
+	        	minPadding: defaultPadding,
+    			maxPadding: defaultPadding
+	        },
+	        xAxis: {
+	        	title: {
+	        		text: '平均瀏覽頁面數',
+	        		style: {
+	        			fontSize: 16
+	        		}
+	        	},
+	        	minPadding: defaultPadding,
+    			maxPadding: defaultPadding
+	        },
+	        plotOptions: {
+	            series: {
+	                dataLabels: {
+	                    enabled: true,
+	                    align: 'right',
+	                    borderRadius: 5,
+	                    backgroundColor: 'rgba(252, 255, 197, 0.7)',
+	                    borderWidth: 1,
+	                    borderColor: '#AAA',
+	                    x: -5,
+	                    y: -6,
+	                    format: '{point.name}'
+	                }
+	            }
+	        },
+	        series: [{
+	            type: 'scatter',
+	            name: '年齡層',
+	            marker: {symbol: 'circle', fillColor: 'orange', states: {hover: {enabled: false}}},
+	            data: [
+					{name: "<25", x: 11.206, y: 0.168, marker: {radius: 15}},
+					{name: "26-35", x: 13.161, y: 0.216, marker: {radius: 30}},
+					{name: "36-45", x: 13.785, y: 0.227, marker: {radius: 45}},
+					{name: "46-55", x: 13.328, y: 0.232, marker: {radius: 33}},
+					{name: ">55", x: 11.497, y: 0.231, marker: {radius: 18}}
+	            ]
+	        }],
+	        tooltip: {
+	            formatter: function() {
+	                return '<b>' + (this.point ? this.point.name : this.series.name) + '</b><br/>';
+	            }
+	        }
+		});
+	});
+	</script>
+</body>

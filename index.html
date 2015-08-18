@@ -18,7 +18,8 @@
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
-  <script src="libraries/js/jquery-1.7.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
   <script data-main="libraries/frameworks/io2012/js/slides" 
     src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
@@ -27,7 +28,7 @@
 
 </head>
 <body style="opacity: 0">
-  <slides class="layout-widescreen">
+  <slides class>
     
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
@@ -41,7 +42,7 @@
     
 
     <!-- SLIDES -->
-    <slide class="" id="slide-1">
+    <slide class="" id="slide-1" style="background:white;">
 <hgroup>
   
 </hgroup>
@@ -49,141 +50,34 @@
 <style>
 .title-slide {
   background-image: url(assets/img/cover.png);
+  background-size: 100%;
+}
+slides > slide:not(.nobackground):after {
+  content: ""
 }
 </style>
 
-<p style="font-size:150%;">
+<p><img src="assets/img/intro.png" alt></p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-2" style="background:white;">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p style="font-size:140%;">
+<br>
 一、瀏覽、購買行為分析
 </p>
 
 </article>
 <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-2" style="background:white;">
-  <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
-    <div class="span6 offset1" style="text-align:left">
-      總瀏覽、購買量
-    </div>
-  </div>
-    
-  <article class = 'flexbox vcenter'>
-  <table><thead>
-<tr>
-<th align="left"></th>
-<th align="left">類別瀏覽 TOP 10</th>
-<th align="left">類別購買 TOP 10</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">1</td>
-<td align="left">視聽家電 - 廚房家電</td>
-<td align="left">視聽家電 - 廚房家電</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">內著塑衣 - 流行內衣褲</td>
-<td align="left">內著塑衣 - 流行內衣褲</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">服飾鞋包 - 流行女鞋</td>
-<td align="left">美妆保养 - 乳霜/凝膠</td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">服飾鞋包 - 女裝上著</td>
-<td align="left">視聽家電 - 生活家電</td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">服飾鞋包 - 機能運動服</td>
-<td align="left">美妆保养 - 藥妝</td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">服飾鞋包 - 女裝外套</td>
-<td align="left">美妆保养 - 身體保養</td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">視聽家電 - 生活家電</td>
-<td align="left">美妆保养 - 美髮造型</td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left">珠寶精品 - 國際精品</td>
-<td align="left">服飾鞋包 - 女裝上著</td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">民生日用 - 鍋具/碗盤</td>
-<td align="left">民生日用 - 鍋具/碗盤</td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left">民生日用 - 淨水/杯瓶</td>
-<td align="left">風味美食 - 零嘴餅乾</td>
-</tr>
-</tbody></table>
-
-  </article>
-</slide>
-<slide class="" id="slide-3" style="background:white;">
-  <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
-    <div class="span6 offset1" style="text-align:left">
-      瀏覽量top5﹣男女生差異
-    </div>
-  </div>
-    
-  <article class = 'flexbox vcenter'>
-  <p><img src="assets/img/top5-sex.png" class="span10" alt></p>
-
-  </article>
-</slide>
-<slide class="" id="slide-4" style="background:white;">
-  <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
-    <div class="span6 offset1" style="text-align:left">
-      購買量top5﹣男女生差異
-    </div>
-  </div>
-    
-  <article class = 'flexbox vcenter'>
-  <p><img src="assets/img/top5sale-sex.png" class="span10" alt></p>
-
-  </article>
-</slide>
-<slide class="" id="slide-5" style="background:white;">
-  <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
-    <div class="span6 offset1" style="text-align:left">
-      瀏覽量top5﹣不同年龄层差异
-    </div>
-  </div>
-    
-  <article class = 'flexbox vcenter'>
-  <p><img src="assets/img/top5view-age.png" class="span8" alt></p>
-
-  </article>
-</slide>
-<slide class="" id="slide-6" style="background:white;">
-  <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
-    <div class="span6 offset1" style="text-align:left">
-      購買量top5﹣不同年龄层差异
-    </div>
-  </div>
-    
-  <article class = 'flexbox vcenter'>
-  <p><img src="assets/img/top5sale-age.png" class="span8" alt></p>
-
-  </article>
-</slide>
 <slide class="" id="24hours" style="background:white;">
   <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
     <div class="span6 offset1" style="text-align:left">
       
     </div>
@@ -204,7 +98,7 @@ $('#24hours').on('slideleave', function(){
 </slide>
 <slide class="" id="oneweek" style="background:white;">
   <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
     <div class="span6 offset1" style="text-align:left">
       
     </div>
@@ -225,7 +119,7 @@ $('#oneweek').on('slideleave', function(){
 </slide>
 <slide class="" id="daily" style="background:white;">
   <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
     <div class="span6 offset1" style="text-align:left">
       
     </div>
@@ -246,9 +140,9 @@ $('#daily').on('slideleave', function(){
 </slide>
 <slide class="" id="browser" style="background:white;">
   <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
     <div class="span6 offset1" style="text-align:left">
-      
+      各瀏覽器流量分佈
     </div>
   </div>
   <br>
@@ -273,7 +167,7 @@ $('#browser').on('slideleave', function(){
 </slide>
 <slide class="" id="browser-ctr" style="background:white;">
   <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
     <div class="span6 offset1" style="text-align:left">
       
     </div>
@@ -294,9 +188,9 @@ $('#browser-ctr').on('slideleave', function(){
 </slide>
 <slide class="" id="sex" style="background:white;">
   <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
     <div class="span6 offset1" style="text-align:left">
-      
+      男女生流量分佈
     </div>
   </div>
   <br>
@@ -313,9 +207,98 @@ $('#sex').on('slideleave', function(){
 
   </article>
 </slide>
+<slide class="" id="slide-9" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
+    <div class="span8 offset1" style="text-align:left">
+      瀏覽量top5﹣男女生差異
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/top5-sex.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-10" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
+    <div class="span8 offset1" style="text-align:left">
+      購買量top5﹣男女生差異
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/top5sale-sex.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="age" style="background:white;">
+  <div class="row-fluid">
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">頁面數、停留時間</div>
+    <div class="span6 offset1" style="text-align:left">
+      
+    </div>
+  </div>
+  <br>
+  <article>
+    <script>
+$('#age').on('slideenter', function(){
+  $(this).find('article')
+  .append("<iframe src = 'dynamic_fig/age.html' scrolling=no></iframe>")
+});
+$('#age').on('slideleave', function(){
+  $(this).find('iframe').remove();
+});
+</script>
+
+  </article>
+</slide>
+<slide class="" id="slide-12" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
+    <div class="span8 offset1" style="text-align:left">
+      瀏覽量top5﹣不同年龄层差异
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/top5view-age.png" class="span8" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-13" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">熱門商品分析</div>
+    <div class="span8 offset1" style="text-align:left">
+      購買量top5﹣不同年龄层差异
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/top5sale-age.png" class="span8" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="map" style="background:white;">
+  <div class="row-fluid">
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span6 offset1" style="text-align:left">
+      
+    </div>
+  </div>
+  <br>
+  <article>
+    <div class="row-fluid">
+<iframe class="span6" src = 'dynamic_fig/map-view.html' scrolling=no style="height:600px;"></iframe>
+<iframe class="span6" src = 'dynamic_fig/map-ctr.html' scrolling=no style="height:600px"></iframe>
+</div>
+
+  </article>
+</slide>
 <slide class="" id="constell" style="background:white;">
   <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
     <div class="span6 offset1" style="text-align:left">
       
     </div>
@@ -334,25 +317,9 @@ $('#constell').on('slideleave', function(){
 
   </article>
 </slide>
-<slide class="" id="map" style="background:white;">
+<slide class="" id="page-time-constell" style="background:white;">
   <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
-    <div class="span6 offset1" style="text-align:left">
-      
-    </div>
-  </div>
-  <br>
-  <article>
-    <div class="row-fluid">
-<iframe class="span6" src = 'dynamic_fig/map-view.html' scrolling=no></iframe>
-<iframe class="span6" src = 'dynamic_fig/map-ctr.html' scrolling=no></iframe>
-</div>
-
-  </article>
-</slide>
-<slide class="" id="24hours-sex" style="background:white;">
-  <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">流量分析</div>
+    <div class="span4" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">頁面數、停留時間</div>
     <div class="span6 offset1" style="text-align:left">
       
     </div>
@@ -360,51 +327,385 @@ $('#constell').on('slideleave', function(){
   <br>
   <article>
     <script>
-$('#24hours-sex').on('slideenter', function(){
+$('#page-time-constell').on('slideenter', function(){
   $(this).find('article')
-  .append("\
-    <div id='24hours-sex' class='row-fluid'> \
-    <iframe class='span6' src = 'dynamic_fig/24hours-sex-view.html' scrolling=no></iframe> \
-    <iframe class='span6' src = 'dynamic_fig/24hours-sex-buy.html' scrolling=no></iframe> \
-    </div> \
-  ")
+  .append("<iframe src = 'dynamic_fig/page-time-constell.html' scrolling=no></iframe>")
 });
-$('#24hours-sex').on('slideleave', function(){
-  $(this).find('#24hours-sex').remove();
-});
-</script>
-
-  </article>
-</slide>
-<slide class="" id="pagetime" style="background:white;">
-  <div class="row-fluid">
-    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">頁面數、停留時間</div>
-    <div class="span6 offset1" style="text-align:left">
-      
-    </div>
-  </div>
-  <br>
-  <article>
-    <script>
-$('#pagetime').on('slideenter', function(){
-  $(this).find('article')
-  .append("<iframe src = 'dynamic_fig/page-time.html' scrolling=no></iframe>")
-});
-$('#pagetime').on('slideleave', function(){
+$('#page-time-constell').on('slideleave', function(){
   $(this).find('iframe').remove();
 });
 </script>
 
   </article>
 </slide>
-<slide class="" id="slide-17">
+<slide class="" id="slide-17" style="background:;">
 <hgroup>
   
 </hgroup>
 <article class = 'flexbox vcenter'>
-<p style="font-size:150%;">
+<p style="font-size:140%;">
+<br>
 二、購買預測
 </p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-18" style="background:;">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p style="font-size:110%;">
+<br>
+哪些客戶在一月份最有可能購買商品？
+</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-19" style="background:;">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p style="font-size:110%;">
+<br>
+客戶在一月份會購買多少商品？
+</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-20" style="background:;">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p style="font-size:110%;">
+<br>
+客戶在一個月內的購買量與當月的瀏覽量和搜索量相關。
+</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-21" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;樣本抽取(Sample)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-sample.png" class="span8" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-22" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      變數觀察、修改(Explore、Modify)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-em11.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-23" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      變數觀察、修改(Explore、Modify)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-em12.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-24" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      變數觀察、修改(Explore、Modify)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-em21.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-25" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      變數觀察、修改(Explore、Modify)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-em22.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-26" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      變數觀察、修改(Explore、Modify)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-em3.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-27" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;建模(Model)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-model.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-28" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模型評估(Assess)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-access.png" class="span8" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-29" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">購買預測模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;結果產出
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/sales-model-output.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-30" style="background:;">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p style="font-size:140%;">
+<br>
+三、商品推薦
+</p>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-31" style="background-image: url(assets/img/recom-intro1.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-32" style="background-image: url(assets/img/recom-intro2.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-33" style="background-image: url(assets/img/recom-intro3.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-34" style="background-image: url(assets/img/recom-intro4.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-35" style="background-image: url(assets/img/recom-intro5.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-36" style="background-image: url(assets/img/recom-intro6.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-37" style="background-image: url(assets/img/recom-intro7.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-38" style="background-image: url(assets/img/recom-intro8.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-39" style="background-image: url(assets/img/recom-intro9.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-40" style="background-image: url(assets/img/recom-intro10.png);background-size: 100%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-41" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">商品推薦模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;樣本抽取(Sample)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/recom-model-sample.png" class="span8" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-42" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">商品推薦模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      變數觀察、修改(Explore、Modify)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/recom-model-em1.png" class="span6" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-43" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">商品推薦模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      變數觀察、修改(Explore、Modify)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/recom-model-em2.png" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-44" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">商品推薦模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;建模(Model)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/recom-model-model.png" class="span8" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-45" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">商品推薦模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模型評估(Assess)
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/recom-model-access.png" class="span7" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-46" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">商品推薦模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;結果產出
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/recom-model-output1.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-47" style="background:white;">
+  <div class="row-fluid">
+    <div class="span3" style="text-align:center; border-bottom: 1px solid #000; padding-bottom:3px">商品推薦模型</div>
+    <div class="span8 offset1" style="text-align:left">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;結果產出
+    </div>
+  </div>
+    
+  <article class = 'flexbox vcenter'>
+    <div><p><img src="assets/img/recom-model-output2.png" class="span10" alt></p>
+</div>
+  </article>
+</slide>
+<slide class="" id="slide-48" style="background:;">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<div>
+<p style="font-size:140%;text-align: center">
+四、總結、致謝
+</p>
+<p style="text-align: left;text-indent: 2em; margin: 0">
+感謝東森集團慷慨貢獻,讓我們能有實際處理大數據的機會!
+</p>
+<p style="text-align: left;text-indent: 2em;">
+感謝 SAS 與 精誠etu 所提供之技術支持!
+</p>
+<img style="margin: 40px 0px 0px 50px" src="assets/img/organizer.png" class="span10" alt>
+</div>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-49" style="background-image: url(assets/img/back-withword.png);background-size: 104%;;">
+<div>
+</div>
+
+</slide>
+<slide class="" id="slide-50" style="background:;">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p></br>
+</br>
+</br>
+</br>
+<img src="assets/img/flappydatalogo.png" class="span5" alt></p>
+
+<div>
+<p style="font-size:100%;text-align: center">
+敬上
+</p>
+<p style="font-size:100%;text-align: center">
+2014年5月
+</p>
+</div>
 
 </article>
 <!-- Presenter Notes -->
@@ -421,31 +722,31 @@ $('#pagetime').on('slideleave', function(){
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='熱門商品分析'>
+        data-slide=2 title=''>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='熱門商品分析'>
+        data-slide=3 title='流量分析'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='熱門商品分析'>
+        data-slide=4 title='流量分析'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='熱門商品分析'>
+        data-slide=5 title='流量分析'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='熱門商品分析'>
+        data-slide=6 title='流量分析'>
          6
       </a>
     </li>
@@ -463,31 +764,31 @@ $('#pagetime').on('slideleave', function(){
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='流量分析'>
+        data-slide=9 title='熱門商品分析'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='流量分析'>
+        data-slide=10 title='熱門商品分析'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='流量分析'>
+        data-slide=11 title='頁面數、停留時間'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='流量分析'>
+        data-slide=12 title='熱門商品分析'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='流量分析'>
+        data-slide=13 title='熱門商品分析'>
          13
       </a>
     </li>
@@ -513,6 +814,204 @@ $('#pagetime').on('slideleave', function(){
       <a href="#" target="_self" rel='tooltip' 
         data-slide=17 title=''>
          17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title=''>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title=''>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title=''>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='購買預測模型'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='購買預測模型'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='購買預測模型'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='購買預測模型'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='購買預測模型'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='購買預測模型'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='購買預測模型'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='購買預測模型'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='購買預測模型'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title=''>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title=''>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title=''>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title=''>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title=''>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title=''>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title=''>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title=''>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title=''>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title=''>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title=''>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='商品推薦模型'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='商品推薦模型'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='商品推薦模型'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='商品推薦模型'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='商品推薦模型'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='商品推薦模型'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='商品推薦模型'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title=''>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title=''>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title=''>
+         50
       </a>
     </li>
   </ul>

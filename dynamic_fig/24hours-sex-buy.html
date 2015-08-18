@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<head>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/highcharts.js"></script>
+	<script src="js/highcharts-more.js"></script>
+</head>
+<body>
+	<div id="chart1" style="min-width: 400px; height: 500px; max-width: 750px; margin: 0 auto"></div>
+	
+	<script type="text/javascript">
+	$(function () {
+	    $('#chart1').highcharts({
+	    	credits: {
+		       	enabled: false
+		    },
+
+		    chart: {
+		        polar: true,
+		        type: 'column'
+		    },
+		    
+		    title: {
+		        text: '24小時購買量分佈'
+		    },
+		    
+		    subtitle: {
+		    	text: '男女生差異'
+		    },
+
+		    pane: {
+		    	size: '85%'
+		    },
+		    
+		    legend: {
+		    	enabled: true
+		    },
+		    
+		    xAxis: {
+		    	categories: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+		    },
+		        
+		    yAxis: {
+		        min: 0,
+		        endOnTick: false,
+		        showLastLabel: true,
+		        labels: {
+		        	enabled: false,
+		        	formatter: function () {
+		        		return this.value + '%';
+		        	}
+		        }
+		    },
+		    
+		    tooltip: {
+		    	formatter: function(){
+		    		return this.x + ':00<br>' + this.series.name + ' ' + this.y + ' ' + this.point.percentage.toFixed(2) + '%';
+		    	}
+	        },
+		        
+		    plotOptions: {
+		    	column: {
+		    		grouping: false,
+		    		shadow: false,
+		    		borderWidth: 0,
+		    		stacking: 'percent',
+		    		pointPadding: -0.3
+		    	}
+		    },
+
+		    series: [{
+                name: '女生瀏覽量',
+                data: [4331,3001,1707,899 ,642 ,521 ,667 ,1298,3119,4594,5146,5238,5125,5440,5401,5622,5024,4525,3752,4411,5554,6218,7038,7557],
+                color: '#F96D6D'
+            },{
+            	name: '男生瀏覽量',
+            	data: [1368,942 ,513 ,304 ,173 ,161 ,164 ,318 ,660 ,1057,1229,1347,1127,1299,1164,1282,1293,1168,1088,1277,1587,1935,2293,2421],
+            	color: 'rgba(111,182,249,1)'
+            }]
+		});
+	});
+	</script>
+</body>

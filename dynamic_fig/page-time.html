@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<head>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/highcharts.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width: 310px; height: 500px; max-width: 800px; margin: 0 auto"></div>
+	<script type="text/javascript">
+	var needChangePadding = true;
+	var defaultPadding = 0.2;
+	$(function () {
+		var xAxisExtremes;
+		var yAxisExtremes;
+	    $('#container').highcharts({
+	        chart: {
+	            type: 'scatter',
+	            zoomType: 'xy'
+	        },
+	        credits: {
+            	enabled: false
+        	},
+	        title: {
+	            text: '平均頁面數與上站時間'
+	        },
+	        yAxis: {
+	        	title: {
+	        		text: '平均瀏覽時間(小時)',
+	        		style: {
+	        			fontSize: 14
+					}
+	        	},
+	        	labels: {
+	        		format: '{value:.2f}h'
+	        	},
+	        	minPadding: defaultPadding,
+    			maxPadding: defaultPadding
+	        },
+	        xAxis: {
+	        	title: {
+	        		text: '平均瀏覽頁面數',
+	        		style: {
+	        			fontSize: 14
+	        		}
+	        	},
+	        	minPadding: defaultPadding,
+    			maxPadding: defaultPadding
+	        },
+	        plotOptions: {
+	            series: {
+	                dataLabels: {
+	                    enabled: true,
+	                    align: 'right',
+	                    borderRadius: 5,
+	                    backgroundColor: 'rgba(252, 255, 197, 0.7)',
+	                    borderWidth: 1,
+	                    borderColor: '#AAA',
+	                    x: -5,
+	                    y: -6,
+	                    format: '{point.name}'
+	                }
+	            },
+	            scatter: {
+	            	events: {
+	            		legendItemClick: function(){
+	            			if (!this.visible)
+                        		return false;
+
+                        	var seriesIndex = this.index;
+		                    var series = this.chart.series;
+
+                        	if (this.name == '性別' && needChangePadding) {
+                        		this.chart.xAxis[0].update({
+                        			minPadding: 1,
+	        						maxPadding: 1
+                        		});
+                        		this.chart.yAxis[0].update({
+                        			minPadding: 1,
+	        						maxPadding: 1
+                        		});
+                        		needChangePadding = false;
+                        	} else {
+								this.chart.xAxis[0].update({
+                        			minPadding: defaultPadding,
+	        						maxPadding: defaultPadding
+                        		});
+                        		this.chart.yAxis[0].update({
+                        			minPadding: defaultPadding,
+	        						maxPadding: defaultPadding
+                        		});
+                        		needChangePadding = true;		                        		
+                        	}
+		                    
+
+		                    for (var i = 0; i < series.length; i++)
+		                    {
+		                        if (series[i].index != seriesIndex)
+		                        {
+
+		                            series[i].visible ?
+		                            series[i].hide() :
+		                            series[i].show();
+		                        } 
+		                    }
+
+		                    return false;
+	            		}
+	            	}
+	            }
+	        },
+	        series: [{
+	            type: 'scatter',
+	            name: '性別',
+	            data: [
+	                {name:"女生", x: 13.58, y: 0.23},
+					{name:"男生", x: 12.66, y: 0.22}
+	            ]},{
+	            type: 'scatter',
+	            name: '星座',
+	            data: [
+					{name: "天秤座", x: 13.428, y: 0.220},
+					{name: "天蠍座", x: 13.160, y: 0.221},
+					{name: "射手座", x: 13.368, y: 0.222},
+					{name: "巨蟹座", x: 13.220, y: 0.229},
+					{name: "摩羯座", x: 13.928, y: 0.235},
+					{name: "水瓶座", x: 13.269, y: 0.223},
+					{name: "獅子座", x: 13.375, y: 0.224},
+					{name: "白羊座", x: 13.019, y: 0.214},
+					{name: "處女座", x: 13.191, y: 0.232},
+					{name: "金牛座", x: 13.148, y: 0.217},
+					{name: "雙子座", x: 13.643, y: 0.222},
+					{name: "雙魚座", x: 13.222, y: 0.223}
+	            ]},{
+	            type: 'scatter',
+	            name: '地區',
+	            data: [
+					{name: "南投縣", x: 13.272, y: 0.225},
+					{name: "台中市", x: 13.380, y: 0.218},
+					{name: "台北市", x: 13.169, y: 0.230},
+					{name: "台南市", x: 13.104, y: 0.219},
+					{name: "台東縣", x: 13.480, y: 0.232},
+					{name: "嘉義市", x: 13.116, y: 0.222},
+					{name: "嘉義縣", x: 13.436, y: 0.209},
+					{name: "基隆市", x: 12.914, y: 0.226},
+					{name: "宜蘭縣", x: 12.528, y: 0.204},
+					{name: "屏東縣", x: 12.348, y: 0.198},
+					{name: "彰化縣", x: 13.583, y: 0.215},
+					{name: "新北市", x: 13.699, y: 0.227},
+					{name: "新竹市", x: 13.246, y: 0.228},
+					{name: "新竹縣", x: 13.376, y: 0.226},
+					{name: "桃園縣", x: 13.023, y: 0.218},
+					{name: "澎湖縣", x: 13.851, y: 0.209},
+					{name: "花蓮縣", x: 13.055, y: 0.215},
+					{name: "苗栗縣", x: 13.203, y: 0.211},
+					{name: "連江縣", x: 11.564, y: 0.246},
+					{name: "金門縣", x: 15.004, y: 0.225},
+					{name: "雲林縣", x: 14.007, y: 0.236},
+					{name: "高雄市", x: 13.419, y: 0.233}	
+	            ]},{
+	            type: 'scatter',
+	            name: '年齡層',
+	            data: [
+					{name: "<25", x: 11.206, y: 0.168},
+					{name: "26-35", x: 13.161, y: 0.216},
+					{name: "36-45", x: 13.785, y: 0.227},
+					{name: "46-55", x: 13.328, y: 0.232},
+					{name: ">55", x: 11.497, y: 0.231}
+	            ]
+	        }],
+	        tooltip: {
+	            formatter: function() {
+	                return '<b>' + (this.point ? this.point.name : this.series.name) + '</b><br/>';
+	            }
+	        }
+		});
+	});
+	</script>
+</body>

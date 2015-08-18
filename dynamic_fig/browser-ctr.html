@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<head>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/highcharts.js"></script>
+</head>
+<body>
+	<div id="chart1" style="min-width: 400px; height: 500px; max-width: 750px; margin: 0 auto"></div>
+	<script type="text/javascript">
+		$(function () {
+	        $('#chart1').highcharts({
+	            title: {
+	                text: '點擊轉化率',
+	                align: 'center'
+	            },
+	            credits: {
+		        	enabled: false
+		        },
+		        legend: {
+		        	enabled: false
+		        },
+		       	plotOptions: {
+		       		line: {
+		       			dataLabels: {
+		       				enabled: true,
+		       				format: "{y}%",
+		       				y: -10
+		       			}
+		       		}
+		       	},
+	            xAxis: {
+	                categories: ["Chrome","Firefox","IE","Linux","Safari","Mobile"]
+	            },
+	            yAxis: {
+	                title: {
+	                    text: '購買量/點擊量'
+	                },
+	                labels:{
+	                	format: '{value} %',
+	                	step: 2
+	                },
+	                plotLines: [{
+	                    value: 0,
+	                    width: 1,
+	                    color: '#808080'
+	                }],
+	                min: 2.6, max: 3.6
+	            },
+	            tooltip: {
+	                valueSuffix: '%'
+	            },
+	            // legend: {
+	            //     layout: 'vertical',
+	            //     align: 'right',
+	            //     verticalAlign: 'middle',
+	            //     borderWidth: 0
+	            // },
+	            series: [{
+	                name: '點擊轉化率',
+	                data: [2.90,2.91,3.16,3.27,2.91,3.26],
+	                threshold: 3.08,
+	                negativeColor: '#0088FF',
+	                color: '#FF0000'
+	            },{
+	            	name: '平均轉化率',
+	                data: [3.08,3.08,3.08,3.08,3.08,3.08],
+	                dashStyle: 'Dot',
+	                marker: {
+	                	enabled: false
+	                },
+	                dataLabels: {
+	                	enabled: false
+	                },
+	                color: '#808080',
+	                enableMouseTracking: false
+	            }],
+	            labels: {
+	            	items: [{
+	            		html: '平均轉化率',
+	            		style: {
+	            			left: '605px',
+	            			top: '210px',
+	            			fontSize: 13
+	            		}
+	            	}]
+	            }
+	        });
+	    });
+	</script>
+</body>

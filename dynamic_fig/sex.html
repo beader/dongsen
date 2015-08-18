@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/highcharts.js"></script>
+</head>
+<body>
+	<div id="chart1" style="min-width: 400px; height: 500px; max-width: 750px; margin: 0 auto"></div>
+	<script type="text/javascript">
+	$(function () {
+	    $('#chart1').highcharts({
+	        chart: {
+	            plotBackgroundColor: null,
+	            plotBorderWidth: 0,
+	            plotShadow: false
+	        },
+			credits: {
+			   	enabled: false
+			},
+	        title: {
+	            text: '性別',
+	            align: 'center',
+	            verticalAlign: 'middle',
+	            y: 100,
+	            style: {
+	            	fontSize: 20
+	            }
+	        },
+	        tooltip: {
+	            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	                dataLabels: {
+	                    enabled: true,
+	                    distance: -30,
+	                    style: {
+	                        fontWeight: 'bold',
+	                        color: 'white',
+	                        textShadow: '0px 1px 2px black',
+	                        fontSize: 15
+	                    }
+	                },
+	                center: ['50%', '75%']
+	            }
+	        },
+	        series: [{
+	            type: 'pie',
+	            name: 'View share',
+	            innerSize: '40%',
+	            startAngle: -90,
+	            endAngle: 90,
+	            dataLabels: {
+	            	distance: -105
+	            },
+	            colors: ["#FB81A2", "#9BCDFB"],
+	            data: [
+					["女生瀏覽", 76.29],
+					["男生瀏覽", 23.71]
+	            ]
+	        },{
+	            type: 'pie',
+	            name: 'Buy share',
+	            innerSize: '72%',
+	            startAngle: -90,
+	            endAngle: 90,
+	            dataLabels: {
+	            	distance: -35,
+	            },
+	            colors: ["#FA5882", "#81BEF7"],
+	            data: [
+					["女生購買", 78.73],
+					["男生購買", 21.27]
+	            ]
+	        }]
+	    });
+	});
+   	</script>
+</body>
